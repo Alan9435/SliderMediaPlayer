@@ -49,7 +49,7 @@ class PhotoFragment : Fragment() {
         val url = arguments?.getString(TAG_URL) ?: ""
         val placeholder = arguments?.getInt(TAG_IMAGE_PLACEHOLDER) ?: RES_IS_EMPTY
 
-        if(placeholder != RES_IS_EMPTY) {
+        if (placeholder != RES_IS_EMPTY) {
             ivPhoto.loadUrl(url = url, placeholder = placeholder)
         } else {
             ivPhoto.loadUrl(url = url)

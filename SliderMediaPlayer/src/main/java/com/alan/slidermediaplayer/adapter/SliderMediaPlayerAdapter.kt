@@ -7,7 +7,6 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.alan.slidermediaplayer.fragment.PhotoFragment
 import com.alan.slidermediaplayer.fragment.VideoFragment
 import com.alan.slidermediaplayer.model.SliderMediaData
-import com.alan.slidermediaplayer.util.RES_IS_EMPTY
 import com.alan.slidermediaplayer.util.TYPE_PHOTO
 import com.alan.slidermediaplayer.util.TYPE_VIDEO
 

@@ -2,7 +2,6 @@ package com.alan.slidermediaplayer
 
 import android.content.Context
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.doOnPreDraw
@@ -41,7 +40,8 @@ class SliderMediaPlayer @JvmOverloads constructor(
             typeArray.apply {
                 autoPlay = getBoolean(R.styleable.SliderMediaPlayer_autoPlay, false)
                 offscreenPageLimit = getInt(R.styleable.SliderMediaPlayer_offscreenPageLimit, 1)
-                mPlaceholder = getResourceId(R.styleable.SliderMediaPlayer_placeholder, RES_IS_EMPTY)
+                mPlaceholder =
+                    getResourceId(R.styleable.SliderMediaPlayer_placeholder, RES_IS_EMPTY)
             }
 
             typeArray.recycle()
@@ -63,7 +63,8 @@ class SliderMediaPlayer @JvmOverloads constructor(
 
                 if (autoPlay) {
                     if (dataList[position].urlType == TYPE_VIDEO) {
-                        val fragment = fragmentActivity.supportFragmentManager.findFragmentByTag("f$position")
+                        val fragment =
+                            fragmentActivity.supportFragmentManager.findFragmentByTag("f$position")
                         if (fragment is VideoFragment) {
                             fragment.playVideo()
                         }
@@ -72,7 +73,11 @@ class SliderMediaPlayer @JvmOverloads constructor(
             }
         })
 
-        val myAdapter = SliderMediaPlayerAdapter(dataList = dataList, placeholder = mPlaceholder, fragmentActivity = fragmentActivity)
+        val myAdapter = SliderMediaPlayerAdapter(
+            dataList = dataList,
+            placeholder = mPlaceholder,
+            fragmentActivity = fragmentActivity
+        )
         vpMediaContainer?.adapter = myAdapter
     }
 
@@ -108,7 +113,7 @@ class SliderMediaPlayer @JvmOverloads constructor(
      * This can help to improve the performance of the app and reduce the amount of time
      * required to reload pages when the user navigates back to them.
      * */
-    fun setOffscreenPageLimit(limitCount : Int) {
+    fun setOffscreenPageLimit(limitCount: Int) {
         offscreenPageLimit = limitCount
     }
 
